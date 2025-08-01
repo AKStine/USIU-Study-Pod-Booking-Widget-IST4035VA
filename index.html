@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USIU-Africa Study Pod Booking System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header with USIU Logo -->
+    <header class="header">
+        <a href="https://www.usiu.ac.ke" target="_blank" class="logo-link">
+            <img src="https://www.usiu.ac.ke/images/logo.png" alt="USIU-Africa Logo" class="logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div class="logo-fallback">USIU-AFRICA</div>
+        </a>
+    </header>
+
+    <div class="container">
+        <h1>📚 Study Pod Booking System</h1>
+        <p class="subtitle">Library Study Pods - Real-time Booking Management</p>
+        
+        <div class="form-section">
+            <h2>Book a Study Pod</h2>
+            <form id="booking-form">
+                <div class="form-group">
+                    <label for="pod-select">Select Pod:</label>
+                    <select id="pod-select" required>
+                        <!-- Options populated via DOM manipulation -->
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="time-input">Time (1-hour blocks):</label>
+                    <input type="time" id="time-input" step="3600" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="students-input">Student IDs (comma-separated):</label>
+                    <input type="text" id="students-input" placeholder="e.g., SIT-001, SMC-210, SST-101" required>
+                    <small class="input-hint">Enter up to 4 student IDs separated by commas</small>
+                </div>
+                
+                <button type="submit">📅 Book Pod</button>
+                
+                <div id="errors"></div>
+                <div id="success-message" class="success-message"></div>
+            </form>
+        </div>
+
+        <div class="table-section">
+            <h2>Current Bookings</h2>
+            <div class="table-container">
+                <table id="bookings-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Pod</th>
+                            <th>Time</th>
+                            <th># Students</th>
+                            <th>Student IDs</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="bookings-tbody">
+                        <!-- Bookings populated via DOM manipulation -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="insights-panel">
+            <h2>📊 Daily Insights</h2>
+            <div class="insights-grid" id="insights-container">
+                <!-- Insights populated via DOM manipulation -->
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 USIU-Africa Library Services | Study Pod Management System</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
