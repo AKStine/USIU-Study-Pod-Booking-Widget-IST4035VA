@@ -1,0 +1,422 @@
+/* USIU-Africa Study Pod Booking System Styles */
+/* Official USIU Colors: Navy Blue (#003366), Gold (#FFD700), White, Light Gray */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #003366 0%, #004080 50%, #0066CC 100%);
+    min-height: 100vh;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header with USIU Logo */
+.header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 51, 102, 0.1);
+    margin-bottom: 30px;
+}
+
+.logo-link {
+    display: inline-block;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.logo-link:hover {
+    transform: scale(1.05);
+}
+
+.logo {
+    height: 60px;
+    width: auto;
+}
+
+.logo-fallback {
+    display: none;
+    font-size: 2em;
+    font-weight: bold;
+    color: #003366;
+    letter-spacing: 2px;
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #FFD700 0%, #FFC107 100%);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 51, 102, 0.2);
+    padding: 40px;
+    backdrop-filter: blur(10px);
+}
+
+h1 {
+    text-align: center;
+    color: #003366;
+    margin-bottom: 10px;
+    font-size: 2.8em;
+    font-weight: 300;
+    text-shadow: 2px 2px 4px rgba(0, 51, 102, 0.1);
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 40px;
+    font-size: 1.2em;
+    font-style: italic;
+}
+
+.form-section {
+    background: linear-gradient(135deg, #f8f9fc 0%, #ffffff 100%);
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    border-left: 5px solid #FFD700;
+    box-shadow: 0 10px 25px rgba(0, 51, 102, 0.1);
+}
+
+.form-section h2 {
+    color: #003366;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+    font-weight: 500;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #003366;
+    font-size: 1.1em;
+}
+
+select, input[type="time"], input[type="text"] {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e1e8ed;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+select:focus, input:focus {
+    outline: none;
+    border-color: #FFD700;
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.input-hint {
+    display: block;
+    margin-top: 5px;
+    color: #666;
+    font-size: 0.9em;
+    font-style: italic;
+}
+
+button {
+    background: linear-gradient(135deg, #003366 0%, #004080 50%, #FFD700 100%);
+    color: white;
+    padding: 18px 35px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(0, 51, 102, 0.3);
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 51, 102, 0.4);
+    background: linear-gradient(135deg, #004080 0%, #0066CC 50%, #FFD700 100%);
+}
+
+button:active {
+    transform: translateY(-1px);
+}
+
+#errors {
+    background: linear-gradient(135deg, #fff5f5 0%, #fed7d7 100%);
+    border: 2px solid #fc8181;
+    color: #c53030;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+    display: none;
+    border-left: 5px solid #e53e3e;
+}
+
+#errors.show {
+    display: block;
+    animation: slideIn 0.3s ease;
+}
+
+.success-message {
+    background: linear-gradient(135deg, #f0fff4 0%, #c6f6d5 100%);
+    border: 2px solid #68d391;
+    color: #22543d;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+    display: none;
+    border-left: 5px solid #38a169;
+}
+
+.success-message.show {
+    display: block;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.table-section h2 {
+    color: #003366;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    font-weight: 500;
+}
+
+.table-container {
+    overflow-x: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 51, 102, 0.15);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+th {
+    background: linear-gradient(135deg, #003366 0%, #004080 100%);
+    color: white;
+    padding: 18px 15px;
+    text-align: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9em;
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid #e2e8f0;
+    transition: background-color 0.3s ease;
+}
+
+tr:hover {
+    background: linear-gradient(135deg, #f8f9fc 0%, #ffffff 100%);
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+.remove-btn {
+    background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+.remove-btn:hover {
+    background: linear-gradient(135deg, #c53030 0%, #9b2c2c 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(197, 48, 48, 0.3);
+}
+
+.insights-panel {
+    background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+    padding: 30px;
+    border-radius: 15px;
+    border-left: 5px solid #003366;
+    box-shadow: 0 10px 25px rgba(0, 51, 102, 0.1);
+}
+
+.insights-panel h2 {
+    color: #003366;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+    font-weight: 500;
+}
+
+.insights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.insight-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fc 100%);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 51, 102, 0.1);
+    border-left: 4px solid #FFD700;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.insight-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 51, 102, 0.15);
+}
+
+.insight-title {
+    font-weight: 600;
+    color: #003366;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.insight-value {
+    font-size: 2em;
+    font-weight: 700;
+    color: #003366;
+    text-shadow: 1px 1px 2px rgba(0, 51, 102, 0.1);
+}
+
+.pod-fill-rates {
+    margin-top: 15px;
+}
+
+.pod-fill-rate {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    background: rgba(255, 215, 0, 0.1);
+    border-radius: 6px;
+    border-left: 3px solid #FFD700;
+}
+
+.pod-fill-rate:last-child {
+    margin-bottom: 0;
+}
+
+.no-bookings {
+    text-align: center;
+    color: #718096;
+    font-style: italic;
+    padding: 50px;
+    font-size: 1.1em;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        margin: 20px;
+        padding: 25px;
+    }
+    
+    h1 {
+        font-size: 2.2em;
+    }
+    
+    .logo {
+        height: 50px;
+    }
+    
+    .logo-fallback {
+        font-size: 1.5em;
+        padding: 10px 20px;
+    }
+    
+    .insights-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-section, .insights-panel {
+        padding: 20px;
+    }
+    
+    button {
+        width: 100%;
+        padding: 15px;
+        font-size: 14px;
+    }
+    
+    table {
+        font-size: 0.9em;
+    }
+    
+    th, td {
+        padding: 10px 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        margin: 10px;
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 1.8em;
+    }
+    
+    .subtitle {
+        font-size: 1em;
+    }
+    
+    .table-container {
+        border-radius: 10px;
+    }
+    
+    .insight-card {
+        padding: 20px;
+    }
+    
+    .insight-value {
+        font-size: 1.5em;
+    }
+}
